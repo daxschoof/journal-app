@@ -1,9 +1,17 @@
-import { View, Text } from "react-native";
+import { NativeWindStyleSheet } from "nativewind";
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaView } from "react-native-safe-area-context";
+import SubmitForm from "@/components/SubmitForm/SubmitForm";
 
-export function index() {
+NativeWindStyleSheet.setOutput({
+  default: "native",
+});
+
+export default function Index() {
   return (
-    <View>
-      <Text>Hello World</Text>
-    </View>
+    <SafeAreaView className="flex-1 bg-zinc-900">
+      <SubmitForm />
+      <StatusBar style="inverted" />
+    </SafeAreaView>
   );
 }
